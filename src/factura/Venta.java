@@ -10,13 +10,13 @@ package factura;
  * @author PC2017
  */
 public class Venta {
-   private String fecha;
+   private Fecha fecha;
    private Vendedor vendedor;
    private int codigo;
    private int cantidad;
    private int formadepago;
 
-    public Venta(String fecha, Vendedor vendedor, int codigo, int cantidad, int formadepago) {
+    public Venta(Fecha fecha, Vendedor vendedor, int codigo, int cantidad, int formadepago) {
         this.fecha = fecha;
         this.vendedor = vendedor;
         this.codigo = codigo;
@@ -24,11 +24,11 @@ public class Venta {
         this.formadepago = formadepago;
     }
 
-    public String getFecha() {
+    public Fecha getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
 
@@ -62,6 +62,21 @@ public class Venta {
 
     public void setFormadepago(int formadepago) {
         this.formadepago = formadepago;
+    }
+    public void imprimir(){
+        System.out.println("      "+this.fecha.getAño()+" "+this.fecha.getMes()+" "+this.fecha.getDia()+" "+this.fecha.getHora());
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ID "+ this.vendedor.getId()+" Vendedor "+this.vendedor.getNombre()+" "+this.vendedor.getApellido());
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("Codigo del producto= "+this.codigo);
+        System.out.println("    ");
+        System.out.println("Cantidad de productos= "+this.cantidad);
+        System.out.println("    ");
+        System.out.println(this.formadepago+ "FORMA DE PAGO= ");
+        
     }
 
     @Override

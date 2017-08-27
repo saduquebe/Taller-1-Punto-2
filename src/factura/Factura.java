@@ -31,8 +31,15 @@ public class Factura {
             System.out.println(producto);
         }
         else if(opcion==2){
-            System.out.println("Digite la fecha");
-            String fecha= in.next();
+            System.out.println("Digite el año");
+            int año;
+            año = in.nextInt();
+            System.out.println("Digite el mes");
+            int mes= in.nextInt();
+            System.out.println("Digite el dia");
+            int dia= in.nextInt();
+            System.out.println("Digite la hora");
+            double hora= in.nextDouble();
             System.out.println("Digite el id del vendedor");
             int idvendedor=in.nextInt();
             System.out.println("Digite el nombre del vendedor");
@@ -46,8 +53,9 @@ public class Factura {
             System.out.println("Digite el medio de pago");
             int medio=in.nextInt();
             Vendedor vendedor=new Vendedor(idvendedor,nombre,apellido);
+            Fecha fecha= new Fecha(año,mes,dia,hora);
             Venta venta= new Venta(fecha,vendedor,codigo,cantidad,medio);
-            System.out.println(venta);
+            venta.imprimir();
         }
     }
     
